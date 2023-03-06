@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<UserSecretsId>dotnet-BatchController-D53A91F7-CA98-4732-B3C9-C1AC42D3E5E5</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="SerilogEnricher\**" />
+	  <Content Remove="SerilogEnricher\**" />
+	  <EmbeddedResource Remove="SerilogEnricher\**" />
+	  <None Remove="SerilogEnricher\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Dto\Subsidy\NationalCodelistDto.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+		<PackageReference Include="Polly" Version="7.2.3" />
+		<PackageReference Include="RabbitMQ.Client" Version="6.2.4" />
+		<PackageReference Include="Z.Dapper.Plus" Version="4.0.28" />
+
+		<PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
+		<PackageReference Include="Serilog.Sinks.Elasticsearch" Version="8.4.1" />
+		<PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
+		<PackageReference Include="Serilog.Enrichers.Process" Version="2.0.1" />
+		<PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+		<PackageReference Include="Serilog.Sinks.MSSqlServer" Version="5.5.1" />
+		<PackageReference Include="Z.Dapper.Plus" Version="4.0.28" />
+		<PackageReference Include="Dapper" Version="2.0.123" />
+		<PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.50" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Backend\BatchOp.Application\BatchOp.Application.csproj" />
+		<ProjectReference Include="..\Backend\BatchOp.Domain\BatchOP.Domain.csproj" />
+		<ProjectReference Include="..\Backend\BatchOp.Infrastructure.Persistence\BatchOp.Infrastructure.Persistence.csproj" />
+		<ProjectReference Include="..\Backend\BatchOP.Infrastructure.Shared\BatchOp.Infrastructure.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Dto\Share\" />
+	  <Folder Include="Interfaces\" />
+	  <Folder Include="logs\" />
+	</ItemGroup>
+</Project>

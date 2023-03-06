@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <UserSecretsId>dotnet-BatchController-D53A91F7-CA98-4732-B3C9-C1AC42D3E5E5</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.10" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+		<PackageReference Include="RabbitMQ.Client" Version="6.2.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\BackendFramework\BatchOp.Application\BatchOp.Application.csproj" />
+		<ProjectReference Include="..\BackendFramework\BatchOp.Domain\BatchOP.Domain.csproj" />
+		<ProjectReference Include="..\BackendFramework\BatchOp.Infrastructure.Persistence\BatchOp.Infrastructure.Persistence.csproj" />
+		<ProjectReference Include="..\BatchController\CustomerRequestProducer.csproj" />
+	</ItemGroup>
+</Project>

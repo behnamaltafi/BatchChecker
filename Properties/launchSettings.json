@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "BatchChecker": {
+      "commandName": "Project"
+    },
+    "Behnam": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Behnam"
+      }
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
